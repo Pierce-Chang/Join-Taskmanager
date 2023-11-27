@@ -1,0 +1,999 @@
+/* General styling for the entire page */
+body {
+    font-family: 'Inter';
+    overflow: hidden;
+}
+
+html {
+    background-color: white;
+}
+
+/* Style for the main contact section */
+.main_contact {
+    display: flex;
+}
+
+/* Style for the "Add New Contact" button */
+.add_new_contact_button {
+    width: 325px;
+    height: 56px;
+    border-radius: 10px;
+    gap: 16px;
+    background-color: #2A3647;
+    font-size: 25px;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 29px;
+    cursor: pointer;
+}
+
+/* Style for generic contact buttons */
+.contact_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the container for all contacts */
+.contacts {
+    height: calc(100vh - 92px);
+    width: 456px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    margin-right: 32px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-shrink: 0;
+}
+
+/* Style for individual contact sections */
+.contact_part {
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 66px;
+}
+
+/* Style for the contact letter */
+.contact_letter {
+    font-size: 20px;
+    padding-left: 13px;
+}
+
+/* Style for separation lines between contacts */
+.space_line {
+    height: 1px;
+    width: 325px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    background-color: #D1D1D1;
+}
+
+/* Style for individual contact */
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+    padding-top: 5px;
+    max-width: 286px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    background: none;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+
+/* Style for the contact if focused */
+.contact button:focus {
+    outline: none;
+}
+
+/* Style for the contact if hovered */
+.contact:hover {
+    border-radius: 10px;
+    background-color: #2A3647;
+    color: white;
+}
+
+/* Style for the contact if active */
+.contact_active {
+    border-radius: 10px;
+    background-color: #2A3647;
+    color: white;
+}
+
+/* Style for the contact's initial image */
+.contact_initial_image {
+    height: 45px;
+    width: 45px;
+    border: none;
+    background-color: #ff7a00;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    margin-right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the contact's name */
+.contact_name {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+/* Style for the contact's email */
+.contact_mail {
+    font-size: 16px;
+    color: #007CEE;
+}
+
+/* Style for the right side of the contact page */
+.right_side_contact {
+    padding-top: 114px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Style for the contact header */
+.contact_header {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the contact headline */
+.contact_headline {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+/* Style for the vertical line next to the headline */
+.space_line_contact_header {
+    height: 59px;
+    width: 3px;
+    background-color: #29ABE2;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Hide space line for contact header on mobile */
+.space_line_contact_header_mobile {
+    display: none;
+    height: 3px;
+    width: 59px;
+    background-color: #29ABE2;
+}
+
+/* Styling for the contact slogan */
+.contact_slogan {
+    font-size: 27px;
+}
+
+/* Animation for the contact to slide in */
+.big_contact_slide_in {
+    animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(400%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Styling for the top section of the large contact */
+.big_contact_top {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-top: 32px;
+}
+
+/* Styling for the contact name */
+.big_contact_name {
+    font-size: 47px;
+    font-weight: 500;
+}
+
+/* Styling for the settings section of the large contact */
+.big_contact_settings {
+    display: flex;
+    margin-top: 12px;
+}
+
+/* Button styling in the large contact settings */
+.big_contact_settings button {
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    gap: 8px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+/* Image styling in the large contact settings */
+.big_contact_settings img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Initial image button styling in the large contact */
+.big_contact_initial_image button {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: #ff7a00;
+    font-size: 47px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the information section in the large contact */
+.big_contact_info {
+    margin-top: 57px;
+}
+
+/* Styling for the headline in the large contact */
+.big_contact_headline {
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+/* Styling for email and phone details in the large contact */
+.big_contact_mail,
+.big_contact_phone {
+    padding-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+/* Main content section styling */
+.main-content-contacts {
+    padding-top: 0px;
+    padding-left: 276px;
+}
+
+
+
+
+
+/* Stil für das Overlay */
+
+/* Overlay background for modals with semi-transparent black background */
+.overlay_background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+}
+
+/* Initial styles for "add" and "edit" overlays, positioned off the right side of the screen */
+.overlay_background_add,
+.overlay_background_edit {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: right 0.3s ease-in-out;
+    opacity: 0;
+}
+
+/* Hidden state for "add" and "edit" overlays */
+.overlay_background_add.hidden,
+.overlay_background_edit.hidden {
+    right: -500% !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Styling for the main overlay container */
+.overlay {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    overflow-y: auto;
+}
+
+/* Styling for the left panel of the overlay */
+.left_panel {
+    width: 467px;
+    border-radius: 30px 0px 0px 30px;
+    background-color: #2A3647;
+    display: flex;
+    align-items: center;
+}
+
+/* Content styling within the left panel */
+.left_panel_content {
+    margin-left: 48px;
+}
+
+/* Image styling within the left panel */
+.left_panel img {
+    height: 66px;
+    width: 55px;
+}
+
+/* Header styling within the left panel */
+.left_panel_header {
+    color: white;
+    font-size: 61px;
+    font-weight: 700;
+}
+
+/* Slogan styling within the left panel */
+.left_panel_slogan {
+    color: white;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+/* Decorative line within the left panel */
+.left_panel_line {
+    margin-top: 16px;
+    width: 90px;
+    height: 3px;
+    background-color: #29ABE2;
+}
+
+/* Styling for the right panel of the overlay */
+.right_panel {
+    position: relative;
+    width: 745px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 109px;
+}
+
+/* Close button styling for overlay */
+.close_overlay_button {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    cursor: pointer;
+}
+
+/* Close button image styling */
+.close_overlay_button img {
+    height: 32px;
+    width: 32px;
+}
+
+.close_button_mobile {
+    display: none;
+}
+
+/* User information section styling within the overlay */
+.contact_user_information {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 137px;
+}
+
+/* Styling for user image section */
+.user_image button {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    background-color: #D1D1D1;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    border: 3px solid white;
+    font-size: 47px;
+    color: white;
+    font-weight: 500;
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* User image styling within button */
+.user_image img {
+    height: 64px;
+    width: 64px;
+}
+
+/* Form styling for user information */
+.user_information_form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Input field styling within the form */
+.user_information_form input {
+    width: 422px;
+    height: 50px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    text-indent: 18px;
+}
+
+/* Placeholder text styling for input fields */
+.user_information_form input::placeholder {
+    color: #D1D1D1;
+}
+
+/* Styling for input fields with icons on the right side */
+.input_contact_name,
+.input_contact_mail,
+.input_contact_phone {
+    background-position: right 18px center;
+    background-repeat: no-repeat;
+}
+
+.input_contact_name {
+    background-image: url('/img/person.png');
+}
+
+.input_contact_mail {
+    background-image: url('/img/mail.png');
+}
+
+.input_contact_phone {
+    background-image: url('/img/call.png');
+}
+
+/* Button group styling at the bottom of the overlay */
+.add_contact_buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+/* General styling for buttons in the button group */
+.add_contact_buttons button {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Image styling within the button group */
+.add_contact_buttons img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Mobile styling for adding a contact */
+.add_contact_button_mobile {
+    display: none;
+}
+
+/* Mobile styling for contact settings */
+.contact_settings_mobile {
+    display: none;
+}
+
+/* Cancel button styling */
+.cancel_contact_button {
+    height: 56px;
+    width: 126px;
+    border: 1px solid #2A3647;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    font-size: 20px;
+}
+
+/* Create contact button styling */
+.create_contact_button {
+    height: 56px;
+    border: 1px solid #2A3647;
+    background-color: #2A3647;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    font-size: 21px;
+}
+
+.add_contact_button_mobile {
+    display: none;
+}
+
+/* Error message popup styling */
+.error_message {
+    position: fixed;
+    height: 74px;
+    width: 326px;
+    display: none;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    top: 270px;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    background-color: #FF6347;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 0px #00000026;
+    transition: opacity 1s ease-in-out;
+    z-index: 9999;
+}
+
+/* Mobile settings box styling */
+.mobile_settings_box {
+    display: none;
+}
+
+
+/* Media Query */
+
+@media(max-width: 1360px) {
+
+    .overlay_background {
+        align-items: unset;
+    }
+
+    .contact_header {
+        flex-direction: column;
+    }
+
+    .space_line_contact_header {
+        height: 3px;
+        width: 59px;
+    }
+
+    .right_side_contact {
+        align-items: flex-start;
+    }
+
+    .contact_header {
+        align-items: baseline;
+    }
+
+    .space_line_contact_header {
+        margin-left: 0px;
+    }
+
+}
+
+@media(max-width: 1250px) {
+
+    .overlay_background {
+        align-items: center;
+    }
+
+    /* Adjust the position and display of the overlay backgrounds for "add" and "edit" */
+    .overlay_background_add,
+    .overlay_background_edit {
+        display: flex;
+        right: 0 !important;
+        bottom: 0px;
+        transition: bottom 0.3s ease-in-out;
+        top: unset;
+    }
+
+    /* Adjust the hidden state of the overlay backgrounds for "add" and "edit" */
+    .overlay_background_add.hidden,
+    .overlay_background_edit.hidden {
+        bottom: -500% !important;
+        right: 0 !important;
+    }
+
+    /* Adjust the overlay dimensions and direction */
+    .overlay {
+        width: 95vw;
+        height: 80vh;
+        flex-direction: column;
+        position: relative;
+        align-items: unset;
+    }
+
+    .board-body .overlay {
+        width: unset;
+        height: 95vh;
+    }
+
+    .user_information_form {
+        gap: 8px;
+    }
+
+    .user_information_form input {
+        width: 341px;
+        height: 30px;
+    }
+
+    /* Adjust the dimensions and border radius of the left panel in the overlay */
+    .left_panel {
+        border-radius: 30px 30px 0px 0px;
+        width: 100%;
+        height: 50%;
+    }
+
+    .left_panel_header {
+        font-size: 68px;
+    }
+
+    .left_panel_slogan {
+        font-size: 20px;
+    }
+
+    /* Adjust the right panel's dimensions and alignment in the overlay */
+    .right_panel {
+        height: 10%;
+        margin-bottom: 0px;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Adjust the direction and top margin of the user information in the overlay */
+    .contact_user_information {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    /* Position the user image section in the overlay */
+    .user_image {
+        position: absolute;
+        top: -119px;
+        left: 50%;
+        transform: translateX(-50px);
+    }
+
+    /* Center-align the user information form in the overlay */
+    .user_information_form {
+        align-items: center;
+    }
+
+    /* Hide the "cancel" button in the overlay */
+    .cancel_contact_button {
+        display: none;
+    }
+
+    /* Center-align the "create contact" button in the overlay */
+    .create_contact_button {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Hide the close button in the overlay */
+    .close_overlay_button {
+        display: none;
+    }
+
+    /* Style and position the mobile close button in the overlay */
+    .close_button_mobile {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        cursor: pointer;
+        display: block;
+    }
+}
+
+@media(max-width: 1209px) {
+    .big_contact_top {
+        gap: 0;
+        align-items: baseline;
+        flex-direction: column;
+    }
+
+}
+
+@media(max-width: 1132px) {
+    .contact_headline {
+        font-size: 48px;
+    }
+
+    .big_contact_name {
+        font-size: 32px;
+    }
+
+    .contacts {
+        width: 385px;
+    }
+
+    .contact_part {
+        padding-left: 36px;
+    }
+
+}
+
+@media(max-width: 1000px) {
+    .main-content-contacts {
+        padding-left: 177px;
+    }
+
+
+}
+
+@media(max-width: 890px) {
+    .contacts {
+        margin-right: 8px;
+        width: 305px;
+    }
+
+    .contact_part {
+        padding-left: 8px;
+    }
+
+    .contact_button {
+        justify-content: flex-start;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .add_new_contact_button {
+        width: 290px;
+    }
+
+    .space_line {
+        width: 266px;
+    }
+
+}
+
+/* MOBILE VERSION STYLING (Optimized for screens up to 770px width) */
+@media (max-width: 770px) {
+
+    /* Remove left padding for the main content area for contacts */
+    .main-content-contacts {
+        padding-left: 0px;
+    }
+
+    /* Hide the right side of the contact section and set its height to 100% of viewport height */
+    .right_side_contact {
+        display: none;
+        height: calc(100vh - 243px);
+    }
+
+    .big_contact {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+
+    /* Hide the larger contact settings */
+    .big_contact_settings {
+        display: none;
+    }
+
+    /* Set Contact Information Style Back */
+    .big_contact_top {
+        gap: 32px;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    /* Set contacts width to 100% of viewport width, center items, and add top padding */
+    .contacts {
+        width: 100vw;
+        height: calc(100vh - 192px);
+        margin-right: 0px;
+        align-items: center;
+        padding-top: 32px;
+    }
+
+
+
+    /* Remove left padding for individual contact parts */
+    .contact_part {
+        padding-left: 0;
+    }
+
+    /* Adjust the width of the decorative space line */
+    .space_line {
+        width: 80vw;
+    }
+
+    /* Position and style the mobile "add contact" button and mobile contact settings button */
+    .add_contact_button_mobile,
+    .contact_settings_mobile {
+        position: absolute;
+        bottom: calc(80px + 32px);
+        right: 16px;
+        background-color: #2A3647;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        box-shadow: -2px 0 6px 0 rgb(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* Set Font Size */
+    .contact_headline {
+        font-size: 64px;
+    }
+
+    /* Set Font Size */
+    .big_contact_name {
+        font-size: 47px;
+    }
+
+    /* Hide images within the left panel content */
+    .left_panel_content img {
+        display: none;
+    }
+
+    /* Hide mobile contact settings */
+    .contact_settings_mobile {
+        display: none;
+    }
+
+    /* Set height and width for images inside mobile "add contact" button and mobile contact settings */
+    .add_contact_button_mobile img,
+    .contact_settings_mobile img {
+        height: 32px;
+        width: 32px;
+    }
+
+    /* Hide the "add new contact" button */
+    .add_new_contact_button {
+        display: none;
+    }
+
+    /* Adjust right side contact styling */
+    .right_side_contact {
+        display: none;
+        align-items: baseline;
+        padding-left: 16px;
+        padding-top: 32px;
+    }
+
+    /* Adjust contact header alignment */
+    .contact_header {
+        align-items: baseline;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Hide the decorative space line in the contact header */
+    .space_line_contact_header {
+        display: none;
+    }
+
+    /* Display and adjust the mobile decorative space line in the contact header */
+    .space_line_contact_header_mobile {
+        display: flex;
+        width: 90px;
+    }
+
+    /* Style and position the mobile back arrow */
+    .mobile_back_arrow {
+        margin-left: 30px;
+        margin-right: 30px;
+        display: flex !important;
+        height: 32px;
+        width: 32px;
+        position: absolute;
+        top: 160.97px !important;
+        left: calc(100vw - 90.13px) !important;
+        cursor: pointer;
+    }
+
+    /* Set height and width for the mobile back arrow image */
+    .mobile_back_arrow img {
+        height: 32px;
+        width: 32px;
+    }
+
+    /* ADD CONTACT OVERLAY STYLING FOR MOBILE */
+
+    /* Hide the "cancel contact" button in the overlay */
+    .cancel_contact_button {
+        display: none !important;
+    }
+
+    .left_panel_header {
+        font-size: 47px;
+    }
+
+
+    /* MOBILE SETTINGS BOX STYLING */
+
+    /* Style and position the mobile settings box */
+    .mobile_settings_box {
+        position: absolute;
+        bottom: calc(80px + 32px);
+        right: 16px;
+        width: 116px;
+        height: 100px;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: baseline;
+        z-index: 999;
+    }
+
+    /* Style the "edit" and "delete" buttons in the mobile settings box */
+    .edit_contact_mobile,
+    .delete_contact_mobile {
+        display: flex;
+        padding: 8px;
+        cursor: pointer;
+        gap: 18px;
+    }
+
+    .board-body .overlay {
+        width: 95vw;
+    }
+
+}
+
+@media(max-width: 454px) {
+    .contact_headline {
+        font-size: 48px;
+    }
+
+    .big_contact_name {
+        font-size: 32px;
+    }
+
+    .big_contact_initial_image button {
+        height: 100px;
+        width: 100px;
+    }
+
+    .form-column .contact_initial_image {
+        margin-right: 12px;
+        font-size: 12px;
+        height: 32px;
+        width: 32px;
+    }
+
+
+}
+
+@media(max-width: 380px){
+    .user_information_form input {
+        width: 288px;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/login.js" defer></script>
+    <script src="./assets/js/storage.js" defer></script>
+    <title>Join</title>
+</head>
+<!-- Login upper part -->
+
+<body onload="initLogin();" class="login-body">
+    <div id="overlay"></div>
+    <header class="login-header">
+        <img class="login-logo" id="login-logo" src="img/login_logo.png" alt="Login Logo Join">
+        <nav id="login-nav">
+            <p>Not a Join user?</p>
+            <button onclick="window.location.href='register.html';" class="btnsld">Sign up</button>
+        </nav>
+    </header>
+    <!-- Login main container -->
+    <section class="login-main-section">
+        <main id="login-maincontainer">
+            <div class="login-main">
+                <h1>Log in</h1>
+                <div class="h1-underline"></div>
+                <form onsubmit="login();return false;" class="input-fields">
+                    <div class="imgPos">
+                        <input id="email" type="email" placeholder="Email" required>
+                        <img src="/img/login-mail.png" alt="">
+                    </div>
+                    <div class="Error-Container">
+                        <div class="imgPos">
+                            <input id="password" type="password" placeholder="Password" required>
+                            <img onclick="togglePasswordVisibility('password', 'passwordToggle')" class="crsptr"
+                                src="/img/login-lock.png" alt="" id="passwordToggle">
+                        </div>
+                        <div id="passwordMismatchError" class="error-message"></div>
+                    </div>
+                    <div class="remember-container">
+                        <input type="checkbox" class="custom-checkbox" id="customRememberMe">
+                        <label for="customRememberMe" class="custom-checkbox-label"><img
+                                src="img/remember-unchecked.png" alt="Remember Me">
+                            <p class="nouserselect">Remember me</p>
+                            <a class="forgot-password" href="reset_password.html">Forgot Password?</a>
+                        </label>
+                    </div>
+                    <div class="login-buttons">
+                        <button class="login-button btnsld">Log in</button>
+                        <button onclick="guestLogin()" type="button" class="guest-login-button btnclr">Guest Log
+                            in</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </section>
+    <!-- Privacy policy and Legal notice bottom -->
+    <section>
+        <div id="login-bottom-part" class="login-bottom-part">
+            <div class="a-container">
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="a-container">
+                <a href="legal_notice.html">Legal notice</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

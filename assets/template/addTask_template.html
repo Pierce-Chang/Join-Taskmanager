@@ -1,0 +1,151 @@
+<!-- INSERT THIS CODE VIA W3C INCLUDE -->
+
+<div class="addTask-header">
+    <h1 id="addTask-header-h1">Add Task</h1>
+    <img id="addTask-close-button" src="./img/Close.png" alt="close button"
+        onclick="closeAddTaskOverlay(); return false">
+</div>
+
+<form onkeydown="return event.key !='Enter';" onsubmit="submitTask(); return false">
+
+    <div class="form-upper-half">
+        <div class="form-column">
+            <div class="form-column-child">
+                <label>Title<p>*</p></label>
+                <input required type="text" id="addTaskTitle" placeholder="Enter a Title" autocomplete="off">
+            </div>
+            <div class="form-column-child">
+                <label>Description</label>
+                <textarea name="" id="addTaskDescription" placeholder="Enter a Description"
+                    autocomplete="off"></textarea>
+            </div>
+            <div class="form-column-child">
+                <label>Assigned to</label>
+                <div class="form-input-with-img no-linebreak" id="addTaskDropdownContactContainer"
+                    onclick="toggleContactList(); return false">
+                    <div type="text" id="addTaskAssignContact" placeholder="Select contacts to assign">Select contacts
+                        to assign</div>
+                    <img id="addTaskImgDropdownContacts" src="../../img/dropdown_down.png" alt="">
+                </div>
+                <div class="form-list form-list-selection d-none" id="addTaskListContactsContainer">
+                    <ul id="addTaskListContacts">
+                        <!-- wird dynamisch gefüllt -->
+                    </ul>
+                    <button class="btn btn-primary btn-text-with-icon width-100" type="button"
+                        onclick="showAddContactOverlay(); return false">
+                        <span>Add new contact</span>
+                        <img src="../../img/person_add.png" alt="">
+                    </button>
+                </div>
+                <div class="contact-initials-and-name d-none" id="addTaskShowSelectedContacts"
+                    style="margin-left: 10px;">
+                    <!-- wird dynamisch gefüllt -->
+                </div>
+            </div>
+        </div>
+        <div class="form-line bg-lightblue"></div>
+        <div class="form-column">
+            <div class="form-column-child">
+                <label>Due date<p>*</p></label>
+                <input  required type="date" id="addTaskDueDate" autocomplete="off">
+            </div>
+            <div class="form-column-child">
+                <label>Prio<p>*</p></label>
+                <div class="form-prio">
+                    <div class="form-prio-child grow" id="btn-prio-high" onclick="setPrio('high'); return false">
+                        <span>Urgent</span>
+                        <div class="form-prio-img prio-high" id="img-prio-high"></div>
+                    </div>
+                    <div class="form-prio-child grow" id="btn-prio-med" onclick="setPrio('med'); return false">
+                        <span>Medium</span>
+                        <div class="form-prio-img prio-med" id="img-prio-med"></div>
+                    </div>
+                    <div class="form-prio-child grow" id="btn-prio-low" onclick="setPrio('low'); return false">
+                        <span>Low</span>
+                        <div class="form-prio-img prio-low" id="img-prio-low"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-column-child">
+                <label>Category<p>*</p></label>
+                <div class="form-input-with-img no-linebreak" id="addTaskDropdownCategoryContainer"
+                    onclick="toggleCategoryList(); return false">
+                    <div type="text" id="addTaskCategory" placeholder="Select task category">Select task category</div>
+                    <img id="addTaskImgDropdownCategory" src="../../img/dropdown_down.png" alt="">
+                </div>
+                <div class="form-list form-list-selection d-none" id="addTaskListCategoriesContainer">
+                    <ul id="addTaskListCategories">
+                        <!-- wird dynamisch gefüllt -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-column-child">
+                <label>Subtasks</label>
+                <div class="form-input-with-img">
+                    <input onkeydown="subtaskKeylistener(event)" type="text" id="addTaskSubtaskInput" placeholder="Add new subtask" autocomplete="off">
+                    <img id="addTaskImgDropdownSubtask" src="../../img/add.png" onclick="addSubtask(); return false"
+                        alt="">
+                </div>
+                <div class="form-list reduce-and-scroll-list d-none" id="addTaskSubtaskList">
+                    <!-- wird dynamisch gefüllt -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-lower-half">
+        <label class="mobile-hidden">
+            <p>*</p>This field is required
+        </label>
+        <div class="form-buttons">
+            <Button class="btn btn-secondary btn-text-with-icon grow" id="addTaskBtnClear"
+                onclick="resetAddTask(); return false">
+                <span>Clear</span>
+                <img src="img/Close.png" alt="">
+            </Button>
+            <Button class="btn btn-primary btn-text-with-icon grow" type="submit">
+                <span id="addTaskBtnSubmit">Create Task</span>
+                <img src="img/check.png" alt="">
+            </Button>
+        </div>
+    </div>
+
+</form>
+
+<!-- ADD CONTACT OVERLAY -->
+<div class="overlay_background_add" id="addContactOverlay">
+    <div class="overlay">
+        <div class="left_panel">
+            <div class="left_panel_content">
+                <img src="./img/header_logo.png" alt="Join Logo">
+                <div class="left_panel_header">Add contact</div>
+                <div class="left_panel_slogan">Tasks are better with a team!</div>
+                <div class="left_panel_line"></div>
+            </div>
+        </div>
+        <div class="right_panel">
+            <div class="close_overlay_button" onclick="hideAddContactOverlay();"><img src="./img/Close.png"
+                    alt="close button"></div>
+            <div class="contact_user_information">
+                <div class="user_image"><button><img src="./img/personwhite.png" alt="Profile Image"></button></div>
+                <div class="user_information_form">
+                    <input type="text" class="input_contact_name" name="Name" id="addContactName" placeholder="Name"
+                        required>
+                    <input type="email" class="input_contact_mail" name="Email" id="addContactEmail" placeholder="Email"
+                        required>
+                    <input type="tel" class="input_contact_phone" name="Phone" id="addContactPhone" placeholder="Phone"
+                        required>
+                    <div class="add_contact_buttons">
+                        <button onclick="hideAddContactOverlay()" class="cancel_contact_button" type="reset">Cancel <img src="./img/Close.png"
+                                alt="Cancel"></button><button type="submit" class="create_contact_button"
+                            onclick="addContactExtra()">Create contact<img src="./img/check.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/summary.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/tasks.js"></script>
+    <script src="./assets/js/summary.js"></script>
+    <script src="./assets/js/w3c_include.js"></script>
+    <script src="./assets/js/openMenu.js"></script>
+</head>
+
+<body class="summary-body" onload="includeHTML();initUserName();initializeGreeting();initSummary();">
+
+    <div w3-include-html="./assets/template/design_template.html"></div>
+
+    <div class="main-content" style="display: none"; id="summary-content">
+
+        <div class="summary-header">
+            <h1>Join 360</h1>
+            <div class="summary-header-line bg-lightblue"></div>
+            <span>Key Metrics at a Glance</span>
+            <div class="summary-header-line-res bg-lightblue"></div>
+        </div>
+
+        <div class="summary-main-section">
+            <div class="summary-main-dashboard">
+                <!-- first row -->
+                <div class="summary-main-dashboard-row">
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-icon" id="summary-icon-todo"></div>
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-todo"></p>
+                            <span>To-do</span>
+                        </div>
+                    </a>
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-icon" id="summary-icon-check"></div>
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-done"></p>
+                            <span>Done</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- second row -->
+                <div class="summary-main-dashboard-row">
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-icon" id="summary-icon-urgent"></div>
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-urgent"></p>
+                            <span>Urgent</span>
+                        </div>
+                        <div class="summary-main-line bg-lightgrey"></div>
+                        <div class="summary-urgent-date">
+                            <p id="summary-kpi-deadline"></p>
+                            <span>Upcoming Deadline</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- third row -->
+                <div class="summary-main-dashboard-row">
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-tasksInBoard"></p>
+                            <span>Tasks in <br>Board</span>
+                        </div>
+                    </a>
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-progress"></p>
+                            <span>Tasks in Progress</span>
+                        </div>
+                    </a>
+                    <a href="board.html" class="summary-main-container grow">
+                        <div class="summary-kpi">
+                            <p id="summary-kpi-feedback"></p>
+                            <span>Awaiting Feedback</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="summary-main-hello mobile-hidden">
+                <p id="greetingDaytime"></p>
+                <span id="activUserName" class="text-lightblue"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="fadeOut" id="greetingContainerMobile">
+        <div id="helloPageMobile" class="summary-main-hello">
+            <span id="greetingDaytimeMobile"></span>
+            <h1 class="text-lightblue" id="activUserNameMobile"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-header-title-and-button {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1104px;
+    margin-bottom: 32px;
+}
+
+.board-header-search_and_button {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.board-header-search {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #A8A8A8;
+    padding: 9px 16px 9px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.board-header-search input {
+    border: 0;
+    font-size: 20px;
+    width: 100%;
+}
+
+.board-header-search:focus-within {
+    border: 2px solid #29abe2;
+}
+
+.board-header-search input:focus {
+    outline: none;
+}
+
+.search-line {
+    height: 31px;
+    width: 1px;
+    background-color: #D1D1D1;
+}
+
+.board-header button:hover {
+    cursor: pointer;
+}
+
+.board-header p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.img-add,
+.img-drag {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 8px;
+}
+
+.img-add {
+    background-image: url('../../img/add.png');
+    background-size: auto;
+    border: 1px solid black;
+
+}
+
+.img-drag {
+    background-image: url('../../img/drag.png');
+    background-size: cover;
+    border: 0;
+
+}
+
+.img-add:hover {
+    cursor: pointer;
+    background-image: url('../../img/add-blue.png');
+    border: 1px solid #29abe2;
+}
+
+.img-drag:hover {
+    cursor: pointer;
+    background-image: url('../../img/drag-blue.png');
+    border: 1px solid #29abe2;
+}
+
+
+.board-main-section {
+    display: flex;
+    gap: 26px;
+    width: 100%;
+}
+
+.board-column {
+    min-width: 190px;
+    width: 252px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 10px;
+}
+
+.board-column-content {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 10px;
+    height: 100%;
+    padding-bottom: 48px;
+}
+
+.board-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-column-header img {
+    border-radius: 8px;
+    border: 2px solid #2A3647;
+    padding: 3px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+.board-column-header img:hover {
+    cursor: pointer;
+}
+
+.board-column-header h3 {
+    font-size: 20px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 8px;
+}
+
+.no-todo-card {
+    border-radius: 10px;
+    border: 1px dotted #A8A8A8;
+    background-color: #E7E7E7;
+    text-align: center;
+}
+
+.no-todo-card p {
+    font-size: 16px;
+    color: #A8A8A8;
+}
+
+.todo-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    background-color: white;
+    padding: 16px;
+    gap: 24px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.todo-card:hover {
+    cursor: pointer;
+}
+
+.todo-card p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.todo-category {
+    color: white;
+    border-radius: 8px;
+    padding: 4px 16px 4px 16px;
+}
+
+.todo-title-and-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.todo-title {
+    font-weight: bold;
+}
+
+.todo-description {
+    color: #A8A8A8;
+}
+
+.todo-progress-and-subtasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-progress-100 {
+    width: 128px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #F4F4F4;
+}
+
+.todo-progress {
+    background-color: #4589FF;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.todo-progress-and-subtasks p {
+    font-size: 12px;
+    width: 150px;
+    margin-left: 12px;
+}
+
+.todo-persons-and-prio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-persons {
+    display: flex;
+    margin-right: -10px;
+    align-items: center;
+}
+
+.todo-persons div {
+    border-radius: 100%;
+    border: 1px solid white;
+    color: white;
+    font-size: 12px;
+    padding: 8px;
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-prio {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.high {
+    background-image: url("../../img/prio-high.png");
+}
+
+.med {
+    background-image: url("../../img/prio-med.png");
+}
+
+.low {
+    background-image: url("../../img/prio-low.png");
+}
+
+.drag-highlight {
+    background-color: rgba(148, 148, 148, 0.1);
+    border: 1px dotted black;
+}
+
+.todo-card-detailed {
+    padding: 48px 40px 48px 40px;
+    max-width: 525px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+}
+
+.todo-card-detailed .todo-category {
+    padding: 4px 24px 4px 24px !important;
+}
+
+.todo-card-detailed-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-card-detailed-header p {
+    font-size: 23px;
+    color: white !important;
+    font-weight: 400 !important;
+}
+
+.todo-card-detailed-header img {
+    height: 32px;
+    width: 32px;
+}
+
+.todo-card-detailed-header img:hover {
+    cursor: pointer;
+}
+
+.todo-card-detailed h1 {
+    font-size: 61px;
+}
+
+.todo-card-detailed h2 {
+    font-size: 20px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 400;
+    color: black;
+}
+
+.todo-card-detailed p {
+    font-size: 20px;
+    color: black;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-right: 10px;
+}
+
+.todo-card-detailed-row {
+    display: flex;
+    align-items: center;
+}
+
+.todo-card-detailed label {
+    font-size: 20px;
+    color: #2A3647;
+    width: 125px;
+}
+
+.todo-card-detailed-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.todo-card-detailed .form-list-selection {
+    z-index: unset;
+    background-color: unset;
+}
+
+.todo-card-detailed .contact_initial_image {
+    height: 42px;
+    width: 42px;
+    font-size: 12px;
+}
+
+.todo-card-detailed .contact-initials-and-name span {
+    font-size: 19px;
+}
+
+.todo-card-detailed .subtask span {
+    font-size: 16px;
+}
+
+.todo-card-detailed .subtask input {
+    font-size: 16px;
+}
+
+.todo-card-detailed-row button {
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    gap: 8px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.category-and-move-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding-inline-start: 0;
+}
+
+.dropdown li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown li:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Media Query */
+
+@media(max-width: 1360px) {
+
+    .board-main-section {
+        flex-direction: column;
+    }
+
+    .board-header {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    .board-header-search_and_button {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .board-header-title-and-button {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .board-header-search {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .board-column {
+        width: 100%
+    }
+
+    .board-column-content {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 16px;
+    }
+
+    .todo-card {
+        width: 220px;
+        max-width: 220px;
+        min-width: 220px;
+    }
+
+    .no-todo-card {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    /* .todo-card-detailed {
+        max-width: unset;
+    } */
+
+}
+
+
+
+/* MOBILE VERSION 770PX */
+
+@media (max-width: 770px) {
+    .todo-card-detailed {
+        max-width: unset;
+    }
+}

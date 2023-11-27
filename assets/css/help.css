@@ -1,0 +1,19 @@
+li::marker {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.lihelp {
+    padding-left: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.h3help {
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+}
+
+.phelp {
+    margin-block-start: 0em;
+}

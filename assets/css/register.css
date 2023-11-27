@@ -1,0 +1,441 @@
+/*********************Global-CSS************************/
+
+body {
+    margin: 0;
+}
+
+.nouserselect {
+    user-select: none;
+}
+
+.btnsld:hover {
+    background-color: #29ABE2 !important;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    cursor: pointer;
+}
+
+.btnclr:hover {
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: 2px solid #29ABE2;
+    cursor: pointer;
+}
+
+/*********************************Register-CSS**************************************/
+
+.input-fields {
+    width: 422px;
+    height: 152px;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.a-container {
+    width: 133px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-body {
+    background-color: #F6F7F8;
+}
+
+
+#register-maincontainer {
+    width: 598px;
+    height: 630px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+}
+
+.register-input-fields {
+    margin-top: 6px;
+    width: 422px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.i-accept {
+    color: #A8A8A8;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.privacy-policy {
+    padding-left: 4px;
+    color: #29ABE2;
+    text-decoration: none;
+    width: 112px;
+}
+
+.privacy-policy:hover {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.register-pt {
+    padding-top: 20px;
+}
+
+.h1-underline-reg {
+    width: 150px;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: #29ABE2;
+    margin-bottom: 1.6rem;
+}
+
+.back-arrow {
+    position: relative;
+    top: 68px;
+    left: -234px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 16px;
+    transition: 125ms;
+}
+
+.back-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.register-main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-main h1 {
+    margin-block-start: 20px;
+    font-size: 61px;
+    font-weight: 700;
+    margin-block-end: 14px;
+}
+
+.register-main input {
+    width: 378px;
+    height: 22px;
+    padding: 12px 21px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: #000000;
+}
+
+.register-main input:focus {
+    outline-style: none;
+    border: 1px solid #29ABE2;
+}
+
+.register-main input::placeholder {
+    color: #D1D1D1;
+}
+
+.imgPos {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.imgPos img {
+    position: absolute;
+    right: 20px;
+}
+
+.crsptr {
+    cursor: pointer;
+}
+
+.register-main-section {
+    display: flex;
+    justify-content: center;
+}
+
+.register-header {
+    margin: 80px 0px 0px 77px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-bottom-part {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    gap: 8px;
+}
+
+.register-bottom-part a {
+    text-decoration: none;
+    padding: 8px;
+    color: #A8A8A8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.register-bottom-part a:hover {
+    color: #29ABE2;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.CheckPos {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+.CheckPos input {
+    position: absolute;
+}
+
+.register-checkbox-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    left: 100px;
+    gap: 8px;
+    height: 20px;
+}
+
+.sign-up-button {
+    width: 126px;
+    height: 55px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #2A3647;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 24px;
+    transition: 125ms ease-in-out;
+}
+
+.register-checkbox {
+    position: absolute;
+    left: 98px;
+    top: -26px;
+    opacity: 0;
+}
+
+.register-checkbox:checked+.register-checkbox-label img {
+    content: url(/img/remember-checked.png);
+}
+
+.register-checkbox+.register-checkbox-label img {
+    content: url(/img/remember-unchecked.png);
+}
+
+/*******************JS Based CSS***********************/
+
+#msgBox {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #FFFFFF;
+    background-color: #2A3647;
+    border-radius: 20px;
+    padding: 20px 30px;
+    font-size: 20px;
+    opacity: 0;
+    /* Hinzugefügt, um die Meldung zu Beginn auszublenden */
+    transition: 250ms ease-in-out;
+}
+
+/* CSS für die Einblendungsanimation */
+.slide-in {
+    left: 50%;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    opacity: 1 !important;
+    transition: 0.1s ease-in-out;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.error-border {
+    border: 1px solid red !important;
+}
+ 
+.Error-Container {
+    display: flex;
+    flex-direction: column;
+    min-height: 70px;
+}
+
+.overlay::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /* Hintergrundfarbe für das Overlay mit Transparenz */
+    z-index: 1;
+    opacity: 0;
+    /* Set the initial opacity to 0 */
+    pointer-events: none;
+    /* Prevent clicks on the overlay */
+    transition: 0.5s ease-in-out;
+}
+
+.overlay.active::before {
+    opacity: 1;
+    /* Set opacity to 1 when active */
+    pointer-events: auto;
+    /* Enable clicks on the overlay */
+}
+
+@media(max-width: 770px) {
+
+    #register-maincontainer {
+        width: 396px;
+        height: 595px;
+    }
+
+    .register-main input {
+        width: 322px;
+    }
+
+    .register-main h1 {
+        margin-block-start: 0px;
+        font-size: 47px;
+    }
+
+    .register-header {
+        margin: 30px 30px;
+    }
+
+    .h1-underline-reg {
+        width: 88px;
+        margin-bottom: 22px;
+    }
+
+    .register-logo {
+        width: 64px;
+    }
+
+    .back-arrow {
+        top: 40px;
+        left: -140px;
+    }
+
+    .sign-up-button {
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .CheckPos {
+        margin-top: 34px;
+    }
+
+    #msgBox {
+        width: 280px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px 30px;
+        font-size: 20px;
+    }
+
+    .slide-in {
+        left: 50%;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+        opacity: 1 !important;
+        transition: 0.1s ease-in-out;
+    }
+}
+
+@media(max-width: 427px) {
+
+    .register-bottom-part {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #register-maincontainer {
+        width: 330px;
+        height: 540px;
+    }
+
+    .register-main input {
+        width: 220px;
+    }
+
+    .register-main h1 {
+        margin-block-start: 0px;
+        font-size: 47px;
+    }
+
+    .register-header {
+        margin: 10px 30px;
+    }
+
+    .h1-underline-reg {
+        width: 88px;
+        margin-bottom: 20px;
+    }
+
+    .back-arrow {
+        top: 40px;
+        left: -124px;
+        border-radius: 12px;
+        padding: 2px;
+    }
+
+    .sign-up-button {
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .CheckPos {
+        margin-top: 0px;
+        width: 100%;
+    }
+    
+    .register-input-fields {
+        margin-top: 2px;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .register-checkbox-label {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        left: 50px;
+        gap: 8px;
+        height: 20px;
+    }
+
+    .register-checkbox {
+        position: absolute;
+        left: 43px;
+        top: -16px;
+        opacity: 0;
+    }
+}

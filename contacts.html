@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/contacts.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/w3c_include.js"></script>
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/template.js"></script>
+    <script src="./assets/js/contacts.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/openMenu.js"></script>
+    <title>Contacts</title>
+</head>
+
+<body onload="includeHTML();init();hideAddContactOverlay();hideEditContactOverlay();initUserName()">
+    <div w3-include-html="./assets/template/design_template.html"></div>
+
+    <div class="main-content-contacts">
+        <div class="main_contact">
+            <div class="contacts" id="contactsDiv">
+                <div class="contact_button"><button class="add_new_contact_button" onclick="showAddContactOverlay()">
+                        Add new contact <img src="./img/person_add.png" alt="" height="32px" width="32px"></button>
+                </div>
+
+                <div class="contact_part" id="contactList">
+
+                </div>
+            </div>
+            <div></div>
+            <div class="right_side_contact" id="rightSideContactHeader" onclick="closeMobileSettingsBox()">
+                <div class="contact_header">
+                    <div class="contact_headline"> CONTACTS </div>
+                    <div class="space_line_contact_header"></div>
+                    <div class="contact_slogan"> Better with a team</div>
+                    <div class="space_line_contact_header_mobile"></div>
+                    <div class="mobile_back_arrow" style="display:none;" onclick="showContactsListHideContactInfo()">
+                        <img src="./img/arrow-left-line.png" alt="">
+                    </div>
+                </div>
+                <div class="big_contact" id="contactDetails">
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD CONTACT OVERLAY -->
+        <div class="overlay_background_add" id="addContactOverlay">
+            <div class="overlay">
+                <div class="close_button_mobile" onclick="hideAddContactOverlay();"><img src="./img/close_white.png"
+                        alt=""></div>
+                <div class="left_panel">
+                    <div class="left_panel_content">
+                        <img src="./img/header_logo.png" alt="Join Logo">
+                        <div class="left_panel_header">Add contact</div>
+                        <div class="left_panel_slogan">Tasks are better with a team!</div>
+                        <div class="left_panel_line"></div>
+                    </div>
+                </div>
+                <div class="right_panel">
+
+                    <div class="close_overlay_button" onclick="hideAddContactOverlay();"><img src="./img/Close.png"
+                            alt="close button"></div>
+                    <div class="contact_user_information">
+                        <div class="user_image"><button><img src="./img/personwhite.png" alt="Profile Image"></button>
+                        </div>
+                        <div class="user_information_form">
+                            <input type="text" class="input_contact_name" name="Name" id="addContactName"
+                                placeholder="Name" required>
+                            <input type="email" class="input_contact_mail" name="Email" id="addContactEmail"
+                                placeholder="Email" required>
+                            <input type="tel" class="input_contact_phone" name="Phone" id="addContactPhone"
+                                placeholder="Phone" required>
+                            <div class="add_contact_buttons">
+                                <button onclick="hideAddContactOverlay()" class="cancel_contact_button" type="reset">Cancel <img src="./img/Close.png"
+                                        alt="Cancel"></button><button type="submit" class="create_contact_button"
+                                    onclick="addContact()">Create
+                                    contact
+                                    <img src="./img/check.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EDIT CONTACT OVERLAY -->
+        <div class="overlay_background_edit" id="editContactOverlay">
+            <div class="overlay">
+                <div class="close_button_mobile" onclick="hideEditContactOverlay();"><img src="./img/close_white.png"
+                        alt=""></div>
+                <div class="left_panel">
+                    <div class="left_panel_content">
+                        <img src="./img/header_logo.png" alt="Join Logo">
+                        <div class="left_panel_header">Edit contact</div>
+                        <div class="left_panel_line"></div>
+                    </div>
+                </div>
+                <div class="right_panel">
+
+                    <div class="close_overlay_button" onclick="hideEditContactOverlay();"><img src="./img/Close.png"
+                            alt="close button"></div>
+                    <div class="contact_user_information">
+                        <div class="user_image"><button id="editContactInitials"></button></div>
+                        <div class="user_information_form">
+                            <input type="text" class="input_contact_name" name="Name" id="editContactName"
+                                placeholder="Name" required>
+                            <input type="email" class="input_contact_mail" name="Email" id="editContactEmail"
+                                placeholder="Email" required>
+                            <input type="tel" class="input_contact_phone" name="Phone" id="editContactPhone"
+                                placeholder="Phone" required>
+                            <div class="add_contact_buttons">
+                                <button class="cancel_contact_button" type="reset">Delete </button><button
+                                    onclick="saveContact()" type="submit" class="create_contact_button">Save
+                                    <img src="./img/check.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="overlay_background" id="overlayBackground"></div>
+        <div class="successmessage" id="successmessage">Contact succesfully created</div>
+        <div class="error_message" id="error_message">error</div>
+        <div class="contact_settings_mobile" id="contactSettingsMobile" onclick="openMobileSettingsBox()"><img
+                src="./img/contact_options.png" alt="contact options"></div>
+        <div class="add_contact_button_mobile" id="addContactMobileButton" onclick="showAddContactOverlay()"><img
+                src="./img/person_add.png" alt="add contact"></div>
+
+
+    </div>
+
+</body>
+
+</html>

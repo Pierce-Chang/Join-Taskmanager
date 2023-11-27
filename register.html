@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/register.js" defer></script>
+    <title>Join</title>
+</head>
+<!-- Login upper part -->
+
+<body onload="initRegister()" id="register-body" class="register-body overlay">
+    <header class="register-header">
+        <img class="register-logo" src="img/login_logo.png" alt="Login Logo Join">
+    </header>
+
+    <!-- Login main container -->
+    <section class="register-main-section">
+        <main id="register-maincontainer">
+            <div class="register-main">
+                <a href="index.html"><img class="back-arrow" src="img/register-back-arrow.png" alt=""></a>
+                <h1>Sign up</h1>
+
+                <!-- Div used for put blue underline for the h1 -->
+                <div class="h1-underline-reg"></div>
+
+                <!-- Register form -->
+                <form onsubmit="register();return false;" class="register-input-fields">
+                    <div class="imgPos">
+                        <input id="userName" required type="text" placeholder="Name" minlength="4">
+                        <img src="/img/register-name.png" alt="">
+                    </div>
+                    <div class="imgPos">
+                        <input id="email" required type="email" placeholder="Email" minlength="4">
+                        <img src="/img/login-mail.png" alt="">
+                    </div>
+                    <div class="imgPos">
+                        <input id="password" required type="password" placeholder="Password" minlength="4">
+                        <img onclick="togglePasswordVisibility('password', 'passwordToggle')" id="passwordToggle"
+                            class="crsptr" src="/img/login-lock.png" alt="">
+                    </div>
+                    <div class="Error-Container">
+                        <div class="imgPos">
+                            <input id="PWconfirm" required type="password" placeholder="Confirm Password" minlength="4">
+                            <img onclick="togglePasswordVisibility('PWconfirm', 'confirmToggle')" id="confirmToggle"
+                                class="crsptr" src="/img/login-lock.png" alt="">
+                        </div>
+                        <div id="passwordMismatchError" class="error-message"></div>
+                    </div>
+                    <!--Checkbox  -->
+                    <div class="CheckPos">
+                        <input type="checkbox" name="customRememberMe" class="register-checkbox" id="customRememberMe"
+                            value="yes" required>
+                        <label for="customRememberMe" class="register-checkbox-label"><img
+                                src="img/remember-unchecked.png" alt="I accept the Privacy policy">
+                            <p class="i-accept">I accept the<a class="privacy-policy" href="privacy.html">Privacy
+                                    policy</a>
+                            </p>
+                        </label>
+                    </div>
+                    <button type="submit" type="button" id="registerBtn" class="sign-up-button btnsld">Sign up</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <!-- Privacy policy and Legal notice bottom -->
+    <section>
+        <div class="register-bottom-part">
+            <div class="a-container">
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="a-container">
+                <a href="legal_notice.html">Legal notice</a>
+            </div>
+        </div>
+    </section>
+    <div id="msgBox"></div>
+</body>
+
+</html>

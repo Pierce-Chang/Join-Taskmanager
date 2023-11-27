@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/board.css">
+    <link rel="stylesheet" href="./assets/css/addTask.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <link rel="stylesheet" href="./assets/css/contacts.css">
+    <script src="./assets/js/w3c_include.js"></script>
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/template.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/board.js"></script>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/contacts.js"></script>
+    <script src="./assets/js/tasks.js" ></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/openMenu.js"></script>
+</head>
+
+<body class="addTask-body" onload="includeHTML(); initAddTask(0, 'add');initUserName();">
+
+    <div w3-include-html="./assets/template/design_template.html"></div>
+
+    <div class="main-content">
+        <div w3-include-html="./assets/template/addTask_template.html" id="addForm"></div>
+    </div>
+
+    <div class="overlay_background" id="overlayBackground"></div>
+    <div class="successmessage" id="successmessage">Contact succesfully created</div>
+    <div class="error_message" id="error_message">error</div>
+
+    <script>
+
+        // hide contact dropdwon on click outside the div
+        document.addEventListener('mousedown', function (event) {
+            let list = document.getElementById('addTaskListContactsContainer');
+            let container = document.getElementById('addTaskDropdownContactContainer');
+
+            // check if click was outside the container
+            if (!container.contains(event.target) && !list.contains(event.target)) {
+                // check if container is actually visible
+                if (isAssignToDropdownActive) {
+                    // hide the container
+                    hideContactList();
+                }
+            }
+        });
+
+        // hide category dropdwon on click outside the div
+        document.addEventListener('mousedown', function (event) {
+            let list = document.getElementById('addTaskListCategoriesContainer');
+            let container = document.getElementById('addTaskDropdownCategoryContainer');
+
+            // check if click was outside the container
+            if (!container.contains(event.target) && !list.contains(event.target)) {
+                // check if container is actually visible
+                if (isCategoryDropdownActive) {
+                    // hide the container
+                    hideCategoryList();
+                }
+            }
+        });
+
+    </script>
+</body>
+
+
+
+</html>

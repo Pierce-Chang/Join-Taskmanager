@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/board.css">
+    <link rel="stylesheet" href="./assets/css/addTask.css">
+    <link rel="stylesheet" href="./assets/css/contacts.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/color.css">
+    <script src="./assets/js/w3c_include.js"></script>
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/template.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/contacts.js"></script>
+    <script src="./assets/js/tasks.js"></script>
+    <script src="./assets/js/board.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/openMenu.js"></script>
+</head>
+
+<body class="board-body" onload="includeHTML(); initBoard(); initUserName()">
+
+    <div w3-include-html="./assets/template/design_template.html"></div>
+
+    <div class="main-content">
+
+        <div class="board-header">
+            <div class="board-header-title-and-button">
+                <h1>Board</h1>
+                <button class="btn btn-primary btn-text-with-icon desktop-hidden"
+                    onclick="showAddTaskOverlay(0, 'add'); return false" style="width: unset;">
+                    <!-- <p>Add task</p> -->
+                    <img src="../../img/add-white.png" alt="" style="height: 18px; width: 18px;">
+                </button>
+            </div>
+            <div class="board-header-search_and_button">
+                <div class="board-header-search">
+                    <input type="text" placeholder="Find Task" id="board-search">
+                    <div class="search-line"></div>
+                    <img src="img/search.png" alt="">
+                </div>
+                <button class="btn btn-primary btn-text-with-icon mobile-hidden"
+                    onclick="showAddTaskOverlay(0, 'add'); return false">
+                    <p>Add task</p>
+                    <img src="../../img/add-white.png" alt="" style="height: 18px; width: 18px;">
+                </button>
+            </div>
+        </div>
+
+        <div class="board-main-section" id="board">
+            <!-- wird dynamisch gefüllt -->
+        </div>
+
+        <div class="overlay_background" id="addTaskOverlay">
+            <div class="addTask-body addTask-include overlay" id="addTaskOverlayContainer">
+                <div w3-include-html="./assets/template/addTask_template.html" id="addForm"></div>
+            </div>
+        </div>
+
+
+        <!-- SHOW TASK OVERLAY -->
+        <div class="overlay_background_add" id="showTaskOverlay">
+            <div class="overlay" id="showTaskOverlayContainer">
+                <div class="close_button_mobile" onclick="hideTaskOverlay();">
+                    <img src="./img/close_white.png" alt="">
+                </div>
+                <div class="todo-card-detailed" id="todo-card-detailed">
+                    <div class="todo-card-detailed-header">
+                        <p class="todo-category bg-blue" id="todo-card-detailed-category">
+                            <!-- wird dynamisch gefüllt -->
+                        </p>
+                        <img class="" src="./img/Close.png" alt="close button" onclick="hideTaskOverlay();">
+                    </div>
+                    <h1 class="todo-title" id="todo-card-detailed-title">
+                        <!-- wird dynamisch gefüllt -->
+                    </h1>
+                    <h2 class="todo-description" id="todo-card-detailed-description">
+                        <!-- wird dynamisch gefüllt -->
+                    </h2>
+                    <div class="todo-card-detailed-row">
+                        <label for="">Due date:</label>
+                        <p id="todo-card-detailed-dueDate">
+                            <!-- wird dynamisch gefüllt -->
+                        </p>
+                    </div>
+                    <div class="todo-card-detailed-row">
+                        <label for="">Priority:</label>
+                        <p id="todo-card-detailed-prioName">
+                            <!-- wird dynamisch gefüllt -->
+                        </p>
+                        <img class="" id="todo-card-detailed-prioImg" src="img/prio-med.png">
+                    </div>
+                    <div class="todo-card-detailed-list-container">
+                        <label for="">Assigned To:</label>
+                        <div class="form-list form-list-selection">
+                            <ul class="reduce-and-scroll-list" id="todo-card-detailed-assignedToList">
+                                <!-- wird dynamisch gefüllt -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="todo-card-detailed-list-container">
+                        <label for="">Subtasks:</label>
+                        <div class="form-list reduce-and-scroll-list" id="todo-card-detailed-subtasks">
+                            <!-- wird dynamisch gefüllt -->
+                        </div>
+                    </div>
+                    <div class="todo-card-detailed-row flex-end">
+                        <button onclick="deleteContact(i)" id="todo-card-detailed-btnTaskDelete"><img
+                                src="./img/delete.png" alt="Delete Icon">Delete</button>
+                        <button onclick="editTask(i)" id="todo-card-detailed-btnTaskEdit"><img src="./img/edit.png"
+                                alt="Edit Icon">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay_background" id="overlayBackground"></div>
+    <div class="successmessage" id="successmessage">Contact succesfully created</div>
+    <div class="error_message" id="error_message">error</div>
+
+    <script>
+
+        // filter tasks by input in search field
+        document.getElementById("board-search").addEventListener("input", updateBoardBySearch);
+
+        // hide contact dropdwon on click outside the div
+        document.addEventListener('mousedown', function (event) {
+            let container = document.getElementById('addTaskListContactsContainer');
+            if (!container.contains(event.target)) {
+                if (isAssignToDropdownActive) {
+                    hideContactList();
+                }
+            }
+        });
+
+        // hide category dropdwon on click outside the div
+        document.addEventListener('mousedown', function (event) {
+            let container = document.getElementById('addTaskListCategoriesContainer');
+            if (!container.contains(event.target)) {
+                if (isCategoryDropdownActive) {
+                    hideCategoryList();
+                }
+            }
+        });
+
+        // hide detailed todo card on click outside the card
+        document.addEventListener('mousedown', function (event) {
+            let container = document.getElementById('showTaskOverlayContainer');
+            if (!container.contains(event.target)) {
+                if (overlayToDoCardActive && !overlayAddFormActive) {
+                    hideTaskOverlay();
+                };
+            }
+        });
+
+        // hide add form on click outside the form
+        document.addEventListener('mousedown', function (event) {
+            let container = document.getElementById('addTaskOverlayContainer');
+            if (!container.contains(event.target)) {
+                if (overlayAddFormActive) {
+                    closeAddTaskOverlay();
+                };
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
